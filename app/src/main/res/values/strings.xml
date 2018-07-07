@@ -2,4 +2,6 @@
     <string name="app_name">Demo</string>
 
     <string name="empty_state">Oops! It\'s empty.</string>
+
+    <string name="post_toolbar_title">Post</string>
 </resources>
