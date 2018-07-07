@@ -20,6 +20,7 @@ class PostPresenter : BaseRxPresenter<PostContract.View, PostContract.Interactor
         addSubscription(
                 onAttachViewEvents
                         .doOnNext { view?.showLoading() }
+                        .doOnNext { routing.logScreenViewEvent() }
                         .filter { view != null }
                         .map { view?.post }
                         .flatMap {

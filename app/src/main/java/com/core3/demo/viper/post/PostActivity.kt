@@ -1,7 +1,9 @@
 package com.core3.demo.viper.post
 
+import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
+import com.core3.demo.Core3DemoApp
 import com.core3.demo.R
 import com.core3.demo._base.ListingItem
 import com.core3.demo.constants.POST_ARGS
@@ -16,6 +18,7 @@ import com.core3.demo.viper.post.list.aggregate.CommentListItem
 import com.core3.demo.viper.post.list.aggregate.ContactListItem
 import com.core3.demo.viper.post.list.aggregate.DescriptionListItem
 import com.core3.demo.viper.post.list.aggregate.HeaderListItem
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.jakewharton.rxbinding2.support.v7.widget.navigationClicks
 import com.mateuszkoslacz.moviper.base.view.activity.autoinject.passive.ViperAiPassiveActivity
 import kotlinx.android.synthetic.main.activity_post.*
