@@ -15,6 +15,8 @@ class MainActivity : ViperAiPassiveActivity<MainContract.View>(), MainContract.V
 
     private val adapter = PostsAdapter()
 
+    override val listItemClicksEvents = adapter.itemClicksEvents
+
     override fun injectViews() {
         super.injectViews()
         setRecyclerView()

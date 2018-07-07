@@ -11,6 +11,7 @@ import io.reactivex.Observable
 interface MainContract {
 
     interface View : MvpView {
+        val listItemClicksEvents: Observable<Post>
         fun setList(posts: List<Post>)
         fun showList()
         fun showLoading()
@@ -22,5 +23,7 @@ interface MainContract {
         fun getPosts(): Observable<List<Post>>
     }
 
-    interface Routing : ViperRxRouting<Activity>
+    interface Routing : ViperRxRouting<Activity> {
+        fun showPostScreen(post: Post)
+    }
 }

@@ -30,6 +30,14 @@ class MainPresenter : BaseRxPresenter<MainContract.View, MainContract.Interactor
                                     view?.showError(it)
                                 }
                         ))
+        addSubscription(
+                view
+                        ?.listItemClicksEvents
+                        ?.retrySubscribe(
+                                onNext = {
+                                    routing.showPostScreen(it)
+                                }
+                        ))
 
         onAttachViewEvents.onNext(Unit)
     }
