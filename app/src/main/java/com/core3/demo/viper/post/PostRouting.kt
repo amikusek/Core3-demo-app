@@ -4,4 +4,9 @@ import android.app.Activity
 
 import com.mateuszkoslacz.moviper.base.routing.BaseRxRouting
 
-class PostRouting : BaseRxRouting<Activity>(), PostContract.Routing
+class PostRouting : BaseRxRouting<Activity>(), PostContract.Routing {
+
+    override fun closeScreen() {
+        relatedContext?.finish()
+    }
+}

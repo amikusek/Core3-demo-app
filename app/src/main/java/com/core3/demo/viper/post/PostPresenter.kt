@@ -39,6 +39,12 @@ class PostPresenter : BaseRxPresenter<PostContract.View, PostContract.Interactor
                                     view?.showError(it)
                                 }
                         ))
+        addSubscription(
+                view
+                        ?.backButtonClicks
+                        ?.retrySubscribe(
+                                onNext = { routing.closeScreen() }
+                        ))
 
         onAttachViewEvents.onNext(Unit)
     }

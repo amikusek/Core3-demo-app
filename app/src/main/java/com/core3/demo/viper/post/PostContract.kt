@@ -14,6 +14,7 @@ interface PostContract {
 
     interface View : MvpView {
         val post: Post?
+        val backButtonClicks: Observable<Unit>
         fun render(user: User, comments: List<Comment>)
         fun showList()
         fun showLoading()
@@ -26,5 +27,7 @@ interface PostContract {
         fun getComments(id: Int): Observable<List<Comment>>
     }
 
-    interface Routing : ViperRxRouting<Activity>
+    interface Routing : ViperRxRouting<Activity> {
+        fun closeScreen()
+    }
 }

@@ -16,6 +16,7 @@ import com.core3.demo.viper.post.list.aggregate.CommentListItem
 import com.core3.demo.viper.post.list.aggregate.ContactListItem
 import com.core3.demo.viper.post.list.aggregate.DescriptionListItem
 import com.core3.demo.viper.post.list.aggregate.HeaderListItem
+import com.jakewharton.rxbinding2.support.v7.widget.navigationClicks
 import com.mateuszkoslacz.moviper.base.view.activity.autoinject.passive.ViperAiPassiveActivity
 import kotlinx.android.synthetic.main.activity_post.*
 
@@ -24,6 +25,8 @@ class PostActivity : ViperAiPassiveActivity<PostContract.View>(), PostContract.V
     private val adapter = PostDetailsAdapter()
 
     override val post by lazy { args.getParcelable<Post>(POST_ARGS) }
+    override val backButtonClicks
+        get() = toolbar.navigationClicks()
 
     override fun injectViews() {
         super.injectViews()
