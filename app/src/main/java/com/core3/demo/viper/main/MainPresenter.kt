@@ -17,6 +17,7 @@ class MainPresenter : BaseRxPresenter<MainContract.View, MainContract.Interactor
         addSubscription(
                 onAttachViewEvents
                         .doOnNext { view?.showLoading() }
+                        .doOnNext { routing.logScreenViewEvent() }
                         .observeOnIo()
                         .flatMap { interactor.getPosts() }
                         .observeOnMain()
@@ -33,6 +34,7 @@ class MainPresenter : BaseRxPresenter<MainContract.View, MainContract.Interactor
         addSubscription(
                 view
                         ?.listItemClicksEvents
+                        ?.doOnNext { routing.logListItemClicksEvents(it.id) }
                         ?.retrySubscribe(
                                 onNext = {
                                     routing.showPostScreen(it)
