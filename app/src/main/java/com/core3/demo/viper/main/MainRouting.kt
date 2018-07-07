@@ -15,6 +15,7 @@ class MainRouting : BaseRxRouting<Activity>(), MainContract.Routing {
             it.startActivity(Intent(it, PostActivity::class.java).apply {
                 putExtra(POST_ARGS, post)
             })
+            it.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         }
     }
 }
