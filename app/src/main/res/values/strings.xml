@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Demo</string>
+
+    <string name="empty_state">Oops! It\'s empty.</string>
+
+    <string name="posts_toolbar_title">Posts</string>
+    <string name="post_toolbar_title">Post</string>
+
+    <string name="app_chooser_title">Choose app</string>
 </resources>
