@@ -25,5 +25,7 @@ interface MainContract {
 
     interface Routing : ViperRxRouting<Activity> {
         fun showPostScreen(post: Post)
+        fun logScreenViewEvent()
+        fun logListItemClicksEvents(id: Int)
     }
 }

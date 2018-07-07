@@ -31,5 +31,6 @@ interface PostContract {
     interface Routing : ViperRxRouting<Activity> {
         fun openEmailApp(email: String)
         fun closeScreen()
+        fun logScreenViewEvent()
     }
 }
