@@ -25,6 +25,7 @@ class PostActivity : ViperAiPassiveActivity<PostContract.View>(), PostContract.V
     private val adapter = PostDetailsAdapter()
 
     override val post by lazy { args.getParcelable<Post>(POST_ARGS) }
+    override val emailClickEvents = adapter.emailClickEvents
     override val backButtonClicks
         get() = toolbar.navigationClicks()
 

@@ -45,6 +45,12 @@ class PostPresenter : BaseRxPresenter<PostContract.View, PostContract.Interactor
                         ?.retrySubscribe(
                                 onNext = { routing.closeScreen() }
                         ))
+        addSubscription(
+                view
+                        ?.emailClickEvents
+                        ?.retrySubscribe(
+                                onNext = { routing.openEmailApp(it.email) }
+                        ))
 
         onAttachViewEvents.onNext(Unit)
     }
